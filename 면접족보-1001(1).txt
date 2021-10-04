@@ -28,7 +28,7 @@ write once, run everywhere.
    실수        - float(4바이트)
                 - doublt(8바이트) 
 7. -2,147,483,648~2,147,483,647
-8. 변수 num1 선언하는 것이며 메모리에 4btye의 공간을 잡는 것(OS(JVM)이 주소 하당해줌)
+8. 변수 num1 선언하는 것이며 메모리에 4btye의 공간을 잡는 것(OS(JVM)이 주소 할당해줌)
 9. 제임스 고슬링
 10. 자바 프로그램을 생성할 수 있게 해줌, open jdk, OS별로 JVM이 다르기 때문. 
 11. Java Virtual Machine, 자바 가상 머신으로 하나의 소스코드로 다른 OS에서 사용 가능하게 만들어줌
