@@ -98,7 +98,7 @@ class AddNum {
 		System.out.println("양입니다");
 
 		else
-	            System.out.println("가입니다");*/
+	            System.out.println("가입니다");
 		
 
 9. int 변수 3개 선언 
