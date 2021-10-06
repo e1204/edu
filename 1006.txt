@@ -1,0 +1,39 @@
+형변환 대원칙
+int + long  
+
+연산시 두 타입 다른면 반드시 한쪽 타입으로 변환
+한쪽으로 맞추는 원칙은 값을 보전하는 쪽으로
+
+----------
+
+System.out.println('A'); -> A
+--> 8개의 data type은 그냥 뿌림
+
+System.out.println('A' + 'A'); -> 130
+--> int 이하의 data type은 int로 변환시키기 때문에
+'A' -> 65 + 'A' -> 65 => 130
+System.out.println((int)65 + (int)65); 
+
+---------
+
+		int kor = 100;
+		int eng = 100;
+		int math = 90;
+		
+		int score = kor + eng + math;
+		double avg = (double)score / 3;
+		
+		System.out.println(avg);
+		
+		if (avg >= 90)  = ((avg >= 90) && (avg <= 100)
+		System.out.println("수입니다");
+		
+		else if (avg >= 80) = ((avg >= 80) && (avg < 90)
+		System.out.println("우입니다");
+		
+		else if (avg >= 70)
+		System.out.println("미입니다");
+		
+		else
+	    System.out.println("가입니다");
+
