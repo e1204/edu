@@ -1,0 +1,103 @@
+1.  swithc 문에서 아래의 프로그래밍을 짜시오.
+
+1234 월 봄입니다.출력
+5678 월 여름입니다.출력
+9 10 11 12 월 겨울 입니다. 출력
+
+		int month = 12;
+		
+		switch(month) {
+		case 1, 2, 3, 4:
+			System.out.println("봄입니다");
+			break;
+		case 5, 6, 7, 8:
+			System.out.println("여름입니다");
+			break;
+		case 9, 10, 11, 12:
+			System.out.println("겨울입니다");
+			break;
+		}
+
+
+2. 
+int num = -10 을 할당 후 해당 정수에 대한 절댓값을 출력하는 프로그램을 작성하시오.
+절대값은 양수 입니다.
+
+		int num = -10;
+		
+		if(num < 0) 
+			num = num * (-1);
+		System.out.println(num);
+
+
+3. while 문과 do while 문의 차이는 무엇인가요?
+
+--> while 문은 조건이 안 맞으면 실행을 안하지만, do while은 한 번은 실행
+
+
+4. 아래에서 for 문이 실행 되는 순서를 정리하시오.
+
+for (i = 1; i <= 1000; i++){
+    sum = sum +i
+}
+
+-->i = 1 
+-->i <= 1000 
+-->sum = sum + i 
+-->i++
+
+
+5. 구구단 6단을 출력 하는 프로그램을 짜시오.
+
+		for(int i = 1; i < 10; i++)
+		System.out.println(i + " * 6 = " + (i * 6));
+
+
+6. 1부터 10000 까지의 합을 구하는 프로그램을 짜시오.
+
+		int sum = 0;
+		
+		for(int i = 1; i <= 10000; i++) {
+			sum = sum + i;
+		}
+		System.out.println(sum);
+
+
+7. 1부터 10000 까지의 숫자중 홀수 의 합을 구하는 프로그램을 짜시오.
+
+		int sum = 0;
+		for(int i = 1; i <= 10000; i = i + 2) {
+			sum = sum + i;
+		}
+		System.out.println(sum);
+
+
+8. break 와 continue에 대하여 설명하시오.
+
+-->break는 조건에서 나옴
+-->continue는 처음의 조건 검사로 이동
+
+
+9. 1과 100 사이의 숫자중 5의 배수이자 7의 배수의 첫번재 수는(프로그램밍 하시오)
+
+		int num;
+
+		for(num = 1; num <= 100; num++) {
+			if((num % 5 != 0) || (num % 7 != 0))
+				continue;
+			break;					
+			}
+		System.out.println(num);
+
+
+10.  1과 10000 사이의 숫자중 5의 배수이자 7의 배수인 수의 갯수는(프로그램밍 하시오)
+
+		int num;
+		int count = 0;
+		 
+		for(num = 1; num <= 10000; num++) {
+			if((num % 5 != 0) || (num % 7 != 0))
+				continue;
+			count++;					
+		}	
+		System.out.println(count);
