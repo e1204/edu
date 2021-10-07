@@ -1,0 +1,124 @@
+1. 리터럴이란?
+
+-->자료형을 기반으로 표현이 되는 상수
+
+
+2. 아래의 내용이 에러가 나는 이유와 수정 방법은?
+System.out.println(3147483647 + 3147483648); 
+
+-->int형의 범위를 벗어난 long형이기 때문에
+-->System.out.println(3147483647L + 3147483648L); 
+
+
+3. 자동 형변환과 명시적 형변환에 대하여 설명하시오.
+
+-->자동 형변환 : 크기가 작은 자료형에서 큰 자료형으로의 형 변환은 자동으로 이루어짐
+-->명시적 형변환 : 자동 형변환에 부합하지 않지만 형 변환이 필요한 상황일 때 사용함
+
+
+4.아래의 에러가 나는 이유를 설명하고 수정 하시오.
+
+int a = 3;
+int b = 4;
+	
+double result = a / b;
+
+System.out.println(result);
+
+-->3/4의 계산값은 실수인데 int 정수로 선언하여 정수로 계산됨
+-->1. double result = (int)a/b; --> 0나옴
+-->2. double a =3; or double b=4;
+-->3. double result = (double)num3/num4; or num3/(double)num4;
+-->4. double result = (doblue)num3/(double)num4;
+
+
+5. 이스케이프 시퀀스의 종류를 나열하고 기능을 설명하시오.
+
+-->'\b'  백스페이스 문자
+-->'\t'  탭문자
+-->'\\' 백슬래시 문자
+-->'\''   작은따옴표 문자
+-->'\"'  큰따옴표 문자
+-->'\n'  개 행 문자
+-->'\r'  캐리지 리턴 문자
+
+
+6. 아래의 출력 결과를 확인하고, 130이 나오는 이유를 설명
+System.out.println('A'); 
+System.out.println('A' + 'A');
+
+-->'A'는 문자 표현 : A 
+-->'A' + 'A'는 문자열 표현 : 'A'의 값은 65로 65+65=130
+
+
+7. 결합 방향과 우선순위에 대하여 설명하시오.
+
+-->
+
+
+8. "1초과 100미만인가?"를 코딩으로 표현하면?
+
+-->
+int num1;
+(1 < num1) && (num1 < 100)
+
+
+9. "2의 배수 또는 3의 배수?" 를 코딩으로 표현 하면?
+
+-->
+int num1;
+(num1 % 2) == 0 || (num1 % 3) == 0
+
+
+10. 아래의 프린트 결과를 예측해 보고, 코딩 후 결과를 확인 하시오.
+class SCE {
+	public static void main(String[] args) {
+		int num1 = 0;
+		int num2 = 0;
+		boolean result;    
+
+		result = ((num1 += 10) < 0) && ((num2 += 10) > 0);
+    System.out.println("result = " + result);
+    System.out.println("num1 = " + num1);
+    System.out.println("num2 = " + num2); 
+	
+    result = ((num1 += 10) > 0) || ((num2 += 10) > 0);
+    System.out.println("result = " + result);
+    System.out.println("num1 = " + num1);
+    System.out.println("num2 = " + num2);
+	}
+}
+
+-->
+
+F and T -> F (앞에 F 나오면 AND 연산에서는 뒤에 T, F 상관없이 F가 나와서 뒤에 연산 X)
+num1=10, num2=0이 됨
+result = false
+num1 = 10
+num2 = 0
+T or T -> T (앞에 T 나오면 OR 연산에서는 뒤에 T, F 상관없이 T가 나와서 뒤에 연산 X)
+num1=20, num2=0이 됨
+result = true
+num1 = 20
+num2 = 0
+
+
+11.아래를 프로그래밍 하시오.
+국어 : 50
+영어 : 70
+수학 : 95
+
+총점과 평균을 구하시오.
+-단 평균은 소숫점 까지 나오도록 하시오
+
+-->
+int kor = 50;
+int eng = 70;
+int math = 95;
+
+int score = kor + eng + math;
+double average = (double)score / 3; or double average = score / 3.0;
+
+System.out.println("총점 : " + score);
+System.out.println("평균 : " + average);
+
