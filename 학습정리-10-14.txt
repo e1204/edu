@@ -1,0 +1,176 @@
+1. set classpath 에 대하여 설명하시오.
+
+-->classpath는 JVM이 클래스 파일을 찾는 경로
+-->set classpath는 경로를 지정
+-->경로를 지정하게 되면 JVM은 그 경로만 탐색함
+
+
+2.절대 경로와, 상대경로란?
+
+-->절대경로는 파일의 전체 경로
+-->상대경로는 내 위치를 기준으로 상대적인 파일의 위치
+
+
+3.  cd  . 관 cd .. 의 차이는?
+
+-->cd.는 현재 디렉토리
+-->cd..는 한 단계 상위 디렉토리
+
+
+4.package 에 대하여 설명해 보시오.
+
+
+5.정보은닉에 대하여 설명하여 보시오.
+
+
+6.접근제한자에 대하여 설명하시오.
+
+
+7. 지역변수에 접근 제한자가 필요없는 이유는?
+
+
+8. 아래의 클래스를 구현하시오. 
+
+Money money = new Money(-126000);
+money.show();
+
+출력 
+잘못된 입력입니다.
+오만원 0장....
+오만원 0장....
+등등등....
+
+class Money{
+	
+	private int money = -123000;
+	
+	
+	Money(int money){
+		//this.money = money;
+		setMoney(money);
+	}
+	
+	public void setMoney(int money) {
+		
+		if(money < 0) {
+			this.money = 0;
+			System.out.println("잘못된 입력입니다");
+		}
+	}
+	
+	
+	
+	public void show() {
+		
+		/*if(money < 0) {
+			System.out.println("잘못된 입력");
+			money = 0;
+			}
+			this.money = money;*/
+			
+		
+		System.out.println("오만원 : " + money/50000+"장");
+		money = money%50000;
+		System.out.println ("만원 : " +money/10000+"장");
+		money = money%10000;
+		System.out.println ("오천원 : " +money/5000+"장");
+		money = money%5000;
+		System.out.println ("천원 : " +money/1000+"장");
+		money = money%1000;
+		System.out.println ("오백원 : " +money/500+"개");
+		money = money%500;
+		System.out.println ("백원 : " +money/100+"개");
+	}
+	
+}
+
+
+public class Class3 {
+
+	public static void main(String[] args) {
+		
+		Money money = new Money(-123000);
+		money.show();
+		
+	}
+
+}
+
+
+9.아래의 클래스를 구현하시오.
+Employee employee = new Employee("홍길동", 19, "서울 뉴욕시", "개발 1팀");
+employee.printInfo();
+}
+
+출력:
+이름 : 홍길동
+나이 : 19
+주소 : 서울 뉴욕시
+부서 : 개발 1팀
+
+class Employee{
+	
+	private String name;
+	private int age;
+	private String address;
+	private String team;
+	
+	Employee(String name, int age, String address, String team){
+		this.name = name;
+		this.age = age;
+		this.address = address;
+		this.team = team;
+	}
+	
+	void printInfo() {
+		System.out.println("이름 : " + name);
+		System.out.println("나이 : " + age);
+		System.out.println("주소 : " + address);
+		System.out.println("부서 : " + team);
+	}
+
+}
+
+
+public class DDD {
+
+	public static void main(String[] args) {
+		
+		Employee employee = new Employee("홍길동", 19, "서울 뉴욕시", "개발 1팀");
+		employee.printInfo();
+		
+	}
+
+}
+
+
+10.다음 멤버를 가지고 직사각형을 표현하는 Rectangle 클래스를 작성하라.
+​
+- int 타입의 x, y, width, height 필드 : 사각형을 구성하는 점과 크기 정보
+- x, y, width, height 값을 매개변수로 받아 필드를 초기화하는 생성자
+- int square() : 사각형 넓이 리턴
+- void show() : 사각형의 좌표와 넓이를 화면에 출력
+- boolean contains(Rectangle r) : 매개변수로 받은 r이 현 사각형 안에 있으면 true 리턴 (겹치면 안됨. 완전히 안에 있어야 true)
+- main() 메소드의 코드와 실행 결과는 다음과 같다.
+
+
+public static void main(String args[]) {
+		Rectangle r = new Rectangle(2, 2, 8, 7);
+		Rectangle s = new Rectangle(5, 5, 6, 6);
+		Rectangle t = new Rectangle(1, 1, 10, 10);
+		
+		r.show();
+		System.out.println("s의 면적은 "+s.square());
+		if(t.contains(r)) System.out.println("t는 r을 포함합니다.");
+		if(t.contains(s)) System.out.println("t는 s를 포함합니다.");
+	}
+
+출력:
+(2,2)에서 크기가 8x7인 사각형
+s의 면적은 36
+t는 r을 포함합니다.
+
+
+
+
+
