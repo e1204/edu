@@ -1,0 +1,17 @@
+함수오버로딩 - 같은 이름, 타입, 개수
+------
+this 용도 = this 함수, this로 변수 접근
+------
+String = 
+String == (주소비교)
+equals
+concats
+subString
+compare
+------
+index는 0부터 시작
+
+-----
+subString(0)이랑 charAt(0) subString(0) 는 짤라내어서 메모리에 다시 생성  charAt(0) 메모리에 다시 생성 시키지 않고 해당 코드값만 받아옴.
+
+subString(0) 는 리턴값이 String charAt(0)리턴값이 char 타입
