@@ -1,0 +1,78 @@
+메모리는 컴퓨터이다. (has - a)
+(상속관계X)
+
+class Computer{
+ 	Memory memory;
+	SoundCard sound;
+	GraphicCard graph;
+}
+
+class Memory{
+
+}
+
+=====
+
+오버로딩 / 오버라이딩 차이점 많이 물어봄
+
+=====
+
+int a = 100;
+double num = a;
+
+a는 int -> double로 자동형변환됨
+data type이 작은 범위에서 큰 범위로 바뀌면
+double num = (double)a; 할 필요 없이 자동형변환
+
+reference 타입도 
+(Mobile : 부모, Smart : 자식)
+MobilePhone ph2 = (MobilePhone) new SmartPhone("~~", "~~");
+(MobilePhone) 안써줘도됨 
+-->다형성 : 부모 = 자식 (형변환 없이)
+
+(자식 = 부모 NO)
+	
+=====
+
+함수 오버로딩 - 같은 함수이름으로 data 타입과 개수 달리 한 것
+->함수 여러개 만들 수 있음 (System.out.println)
+함수 오버라이딩 - 상속 관계에서 같은 함수(void yummy())로 바디만 달리 한 것
+부모 = 자식
+오버라이딩은 자식꺼
+
+class Cake {
+	public void yummy() {
+		System.out.println("Yummy Cake");
+	}
+}
+
+class CheeseCake extends Cake {
+	@override    //override 표시 해 줄 수도 있음
+	public void yummy() {
+		System.out.println("Yummy Cheese Cake");
+	}
+}
+
+
+class Class {
+
+	public static void main(String[] args) {
+	
+		Cake c1 = new CheeseCake();
+		CheeseCake c2 = new CheeseCake();
+		
+		c1.yummy();
+		c2.yummy();
+		
+	}		
+
+}
+
+
+
+
+
+
+
+
+
