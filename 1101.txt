@@ -1,0 +1,38 @@
+객체지향언어 = 모든것이 클래스로 표현
+->int를 객체로 다룸
+->int 폴리몰피즘 가넝
+
+
+String 안에는 배열이 있음
+byte[] value로
+
+=====
+
+<HTML>
+
+프로그램(Application)을 종류로 나누게 되면
+-----
+시스템 프로그래밍 - 하드웨어 컨트롤을 해야하는 쪽(JVM, OS, 윈도우, 리눅스, 임베디드 시스템)
+
+응용 프로그래밍 - 한글, 엑셀, 파워포인트,,,C#, Java, 이클립스,,,
+(OS에서 돌아감)
+웹 프로그래밍 - 통신 - (서버 - 클라이언트) 네이버 -> 클라우드(요즘엔 서버-클라이언트 대신,,클라우드로 표현)
+
+
+서버(Back End) - 클라이언트(Front)
+java : Spring, jsp(java server page) (점유율 20%) (국내 현업에서 제일 많이쓰고 돈이 됨,,,은행,전자정부프레임)
++DB 오라클
+MS : ASP(Active Server Page) (점유율 10%)
+Php : PHP (점유율 50% 이상) (개인, 페이스북,,,) - lalavel
+java script : node.js (점유율 1%) (말로만 떴고,,서버중에 작은 부분 가끔 프로젝트 있음,,)
+
+Front 
+html + css + javascript(ajax,,,,)
+(html + css : bootstrap + (Vue or react or angular or velocity)) - 주로 bootstrap
+
+
+
+https://seouliotcenter.tistory.com/126?category=877556
+
+
+
