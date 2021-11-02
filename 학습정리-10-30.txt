@@ -38,12 +38,15 @@ class Person{
 	@Override
 	public boolean equals(Object obj) {
 		
-		Person person = (Person)obj;
+		if(obj instanceof Person) {
+			Person person = (Person)obj;
 		
-		if(this.name == person.name)
-			return true;
+			if(this.name.equals(person.name))
+				return true;
+			}	
 		return false;
-	}	
+	}
+	
 	
 }
 
