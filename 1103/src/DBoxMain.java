@@ -1,4 +1,4 @@
-class DBox<L, R>{
+/*class DBox<L, R>{
 	
 	private L left;
 	private R right;
@@ -30,4 +30,4 @@ public class DBoxMain {
 		
 	}
 
-}
+}*/
