@@ -1,0 +1,119 @@
+1. 프로세스와 쓰레드의 차이점은?
+
+2. 쓰레드에서 동기화란 무엇인가? 
+
+3.html 에서  display 종류와 속성에 대하여 설명하시오.
+
+4.px 과 em 의 차이는? (font)
+px : pixel, 표시장치(모니터)에 따라서 상대적인 크기를 가짐. 1em = 16px
+ex : x-height, 해당폰트의 소문자 x의 높이를 기준으로 함.
+
+5. inline-block 태그의 종류는?
+
+https://calmdawnstudio.tistory.com/51
+대표적 inline-block : button, select
+
+6. display:none; 과 visibility:hidden;의 차이는?
+
+dispaly:none : 아예 사라짐. 안 보임.
+visibility:hidden : 해당 값은 존재하지만 보이지는 않음
+
+
+7.HashMap<Integer, String> map = new HashMap<>();
+   map.put(45, "Brown");
+   map.put(37, "James");
+   map.put(23, "Martin");
+
+======================================
+위의 Value 값이 다나오도록 for 문 돌리시오.
+
+import java.util.HashMap;
+import java.util.Set;
+
+public class Class {
+
+	public static void main(String[] args) {
+		
+		HashMap<Integer, String> map = new HashMap<>();
+		   map.put(45, "Brown");
+		   map.put(37, "James");
+		   map.put(23, "Martin");
+		 
+		Set<Integer> ks = map.keySet();
+		
+		for (Integer n : ks) {
+			System.out.print(n.toString() + '\t');
+		}
+		System.out.println();
+		
+		for (Integer n : ks) {
+			System.out.print(map.get(n) + '\t');
+		}				
+	}	
+}
+
+
+8.로또 번호6개를 출력 -중복없이
+Set 으로 구현 과
+일반 for 문 구현을 따로 하시오.
+
+		int[] lotto = new int[6];
+		
+		for(int i = 0; i < lotto.length; i++) {
+			lotto[i] = (int)(Math.random()*45 + 1);
+			
+			for(int j = 0; j < i; j++) {
+				if(lotto[i] == lotto[j]) {
+					System.out.println("중복 : " + lotto[j]);
+					i--;
+					break;
+				}
+			}
+		}
+		
+		for(int i = 0; i < lotto.length; i++) {
+			System.out.println(lotto[i]);
+		}
+
+--------------------------
+
+		Set<Integer> lottoNum = new HashSet<>();
+		
+		while(lottoNum.size() != 6) {
+			int rNum = 0;
+			rNum = (int)(Math.random()*45 + 1);
+			lottoNum.add(rNum);
+		}
+		
+		for(Integer n : lottoNum) {
+			System.out.println(n);
+		}
+
+
+9.아래가 돌아 가도록 구현하시오.
+
+    main(){
+        ThreadCount threadCount = new ThreadCount();
+                threadCount.start();
+                
+                String input = JOptionPane.showInputDialog("아무 값이나 입력하세요."); 
+                System.out.println("입력하신 값은 " + input + "입니다.");
+}
+=============================================
+10 9 8 7 6 ... 이 1초마다 실행 되도록 쓰레를 완성하시오.
+
+class ThreadEx extends Thread{
+	
+	public void run() {
+		for(int i = 10; i < 0; i--) {
+			System.out.println(i);
+		
+			try {
+				sleep(1000);
+			} catch (Exception e) {
+				
+			}
+		}
+		
+	}
+}

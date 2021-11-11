@@ -1,0 +1,73 @@
+쓰레드 -> 입출력 -> 네트워킹
+
+시스템 프로그래밍 -> 응용어플리케이션 -> 서버프로그래밍(웹)
+
+한 개의 프로그램에서 무언가를 두개를 동시에 실행 시켜야됨 -> 쓰레드
+쓰레드 만드는 방법
+1. extends Thread
+
+class ThreadMusic extends Thread{
+	
+	public void run() {
+		for(int i = 0; i < 300; i++) {
+			System.out.print("+");
+		}
+	}	
+}
+
+class ThreadVedio extends Thread{
+	
+	public void run() {
+		for(int i = 0; i < 300; i++) {
+			System.out.print("-");
+		}
+	}	
+}
+
+
+public class MusicVideoPlayerTest {
+
+	public static void main(String[] args) {
+		
+		ThreadMusic threadMusic = new ThreadMusic();
+		ThreadVedio threadVedio = new ThreadVedio();
+		
+		threadMusic.start();
+		threadVedio.start();
+
+	}
+
+}
+
+2. implements Runnable
+
+메인 쓰레드 + 내가 만든 프로그램 2개 -> 3개 돌아감
+
+threadMusic.run() -> 안됨
+쓰레드는 호출하는게 아니라 OS한테 프로그램 구동시켜달라고 요청하는 개념
+요청하는게 start
+
+ 
+t1, t2가 balance를 공유해서 오류(잔액 안맞음)
+인스턴스 변수는 쓰레드가 공유함
+-->해결책 : 싱크로나이즈(synchronized) : 동기화
+
+wait(), notify(), notifyAll() : 문제 있어서 잘 안씀, 함부로 쓰지 말것,,
+
+
+
+<HTML>
+
+line-height : 글자간 간격(위아래)
+->height 값이랑 line-height 값이랑 맞추면 중앙으로 옴
+margin : 0 auto -> 중앙정렬
+float 주면 overflow : hidden 세트처럼,,
+
+
+
+
+
+
+
+
+
