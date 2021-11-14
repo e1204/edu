@@ -1,0 +1,200 @@
+1. I/O 스트림 이란?
+input : 읽는다
+ouput : 쓴다
+스트림 : 단방향
+
+
+2. float 에 대하여 설명하시오.
+뜨다라는 의미
+이미지를 어떻게 띄워서 텍스트와 함께 배치할 것인가,,
+inherit, left, right, none이 있음
+
+
+3.아래의 포지션 4가지에 대하여 설명하시오.
+-static : 기본값(static은 있으나 없으나 같음)
+-relative : 자기 자신을 기준으로(static 영역에서 움직임)
+-absolute : 부모 요소를 기준으로
+-fixed : 뷰포트(기기)를 기준으로
+
+3. 아래를 프로그래밍 하시오.
+좋은 아침 입니다. 를 love.txt 로 저장 -> 해당 내용을 읽어 들여 love2.txt 로 복사
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+	public class HW2 {
+
+	public static void main(String[] args) {
+
+		OutputStream os = null;
+		InputStream is = null;
+		
+		try {
+			
+		os = new FileOutputStream("C:\\Users\\82103\\eclipse-workspace\\love.txt");
+		
+		String str = "좋은 아침입니다.";
+		byte[] bs = str.getBytes();
+		os.write(bs);
+		
+		os.flush();
+		
+		is = new FileInputStream("C:\\Users\\82103\\eclipse-workspace\\love.txt");
+		os = new FileOutputStream("C:\\Users\\82103\\eclipse-workspace\\love2.txt");
+		
+		bs = new byte[10];
+		while(true) {
+			int count = is.read(bs);
+			if(count == -1) {
+				break;
+			}
+			os.write(bs, 0, count);
+		}
+		
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}finally {
+			if(is != null) {
+				try {
+					is.close();
+				} catch (Exception e2) {
+					System.out.println(e2.getMessage());
+				}
+			}
+			
+			if(os != null) {
+				try {
+					os.close();
+				} catch (Exception e2) {
+					System.out.println(e2.getMessage());
+				}
+			}
+			
+		}
+		
+	}
+}
+
+
+4.금일 배운 내용을 바탕으로,  아래를 프로그래밍 하시오.
+
+나라 이름과 인구를 입력하세요.(예: Korea 5000)
+나라 이름, 인구 >> Korea 5000
+나라 이름, 인구 >> USA 1000000
+나라 이름, 인구 >> Swiss 2000
+나라 이름, 인구 >> France 3000
+나라 이름, 인구 >> 그만
+
+인구 검색 >> France
+France의 인구는 3000
+인구 검색 >> 스위스
+스위스 나라는 없습니다.
+인구 검색 >> 그만
+  
+그만"이 입력될 때까지 나라 이름과 인구를 입력 받아 저장하고, 
+다시 나라 이름을 입력받아 인구를 출력하는 프로그램을 해시맵을 이용하여 아래와 같이 작성 하였다.
+
+위의 CountryMap 에서 아래의 함수를 추가하여 테스트 하시오
+
+// country.bin 에 HashMap<String, Integer> map; 안에 저장된 나라와 인구수를 저장
+// I/O Stream 사용 
+public boolean saveFileMap() {
+    
+}
+// I/O Stream 사용 
+// 저장된 country.bin 을 읽어 들여, HashMap<String, Integer> 으로 반환  
+public HashMap<String, Integer> readFileMap() {
+    
+}
+// I/O Stream 사용 
+// 저장된 country.bin 을 읽어 들여, 저장된 나라와 인구수를 출력
+public void printFileMap() {
+		    
+}
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+import javax.lang.model.util.ElementScanner6;
+
+class CountryMap {
+private HashMap<String, Integer> map;
+
+public CountryMap() {
+    map = new HashMap<>();
+}
+
+public HashMap<String, Integer> getMap() {
+
+    try {
+        System.out.println("나라 이름과 인구를 입력하세요.(예: Korea 5000)");
+        Scanner sc = new Scanner(System.in);
+
+        int population = 0;
+        String country = " ";
+
+        while (true) {
+            System.out.print("나라 이름, 인구 >> ");
+            country = sc.next();
+
+            if (country.equals("그만")) // 입력 "그만" 하면 입력 종료
+                break;
+
+            population = sc.nextInt();
+            map.put(country, population);
+        }
+
+
+    } catch (Exception e) {
+        System.out.println("잘못된 입력입니다. 다시 입력하세요.");
+        getMap();
+    }
+
+    return map;
+}
+
+public void setMap(HashMap<String, Integer> map) {
+    this.map = map;
+}
+
+public void search() {
+
+    try {
+        // 키 입력받아서 검색해서 정보 출력하기 그만할때까지
+        // 없으면 없습니다 출력
+        Scanner sc = new Scanner(System.in);
+
+        String key = " ";
+        while (true) {
+            System.out.print("인구 검색 >> ");
+            key = sc.next();
+
+            if (key.equals("그만")) // 입력 "그만" 하면 검색 종료
+                break;
+            else if (!map.containsKey(key)) { // map의 key에 key가 있지 않으면
+                System.out.println(key + " 나라는 없습니다.");
+                continue;
+            }
+            System.out.println(key + " " + map.get(key)); // 키값으로 내용 출력
+        }
+
+    } catch (Exception e) {
+        System.out.println("잘못된 입력입니다. 다시 입력하세요.");
+        getMap();
+    }
+
+}
+}
+
+public class ContryMapTest {
+public static void main(String[] args) {
+CountryMap countryMap = new CountryMap();
+countryMap.getMap();
+
+    System.out.println();
+    countryMap.search();
+
+}
+}
