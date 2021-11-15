@@ -1,0 +1,62 @@
+모든 통신프로그램은
+반드시 어느 한 쪽이 server역할을 하고 다른 한 쪽이 client역할을 해야 함
+server <--> client
+
+통신은 server ~ client 프로그램
+
+기다리는 쪽 : server (client를 기다림, 다수를 기다림)
+
+
+socket : 객체(전화기)
+
+
+
+네트워크 구현 물어보면...
+1. 소켓
+2. I/O Stream
+3. 쓰레드
+이용해서 채팅 할 수 있음
+
+
+동영상 추천 : 뉴렉처(유튜브)
+
+=========
+
+html + css => 부트스트랩(거의 표준이 되어감)
+
+html + css + javascript (+ ES6) (프론트)
+
+
+
+clear : left ==> 이미지 float 적용 -> left 영역에서 떠나겠다
+
+
+@media(미디어 쿼리) :  값을 달리해줄 수 있음
+
+style 주는 법
+1. link
+2. head에 style
+3. body에 style 직접적으로
+==>우선순위 : 3 -> 2 -> 1
+
+
+ @media screen and (max-width:767px) {
+            #content_wrap #content p { font-size:2em; font-weight:bold; }
+        	}
+: max 까지는 {}내용 실행 
+
+@media screen and (min-width:768px) and (max-width:959px) {
+            #content_wrap #content p { font-size:1.5em; font-weight:bold; }
+        	}
+: min 부터 -> 768부터 959까지 {}내용 실행
+
+ @media screen and (min-width:960px) {
+            #content_wrap #content p { font-size:1em; font-weight:bold; }
+        	}
+
+: 960부터 {}내용 실행
+
+
+
+
+
