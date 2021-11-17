@@ -1,0 +1,97 @@
+html + CSS : 시간 넣을 수 없음
+시간을 뽑아내는 프로그래밍 들어가야함
+동적, 정적
+정적 : html + CSS만 가지고 코딩하는것
+정적 + 프로그래밍 요소 = 동적
+
+동적 : 1. javascript / 2. JSP / 3. ASP / 4. PHP
+2,3,4 : 서버언어
+점유율 : 2 : 30% / 3 : 10 % / 4 : 50%
+4 : 벤처
+2 : 기업, 은행,,
+
+1 : 클라이언트
+
+
+이클립스에서 jsp 생성하고 run에서 나오는 인터넷창에서 F12 누르면 html 소스
+웹브라우저는 jsp인지 asp인지 모름
+
+이클립스 상에서는 <%@~~~~>있는데
+인터넷창에서 F12 소스에서는 안나옴
+
+java server page (JSP)
+
+JSP로 만든걸 톰캣이 hello.jsp.java로 바꿈
+
+소스를 채팅하는것처럼 순서대로 보냄
+write("")
+
+
+Model View Contoller (MVC)
+view(JSP) Controller(servlet)
+
+<sevlet>
+url mapping : hello로 저장 (인터넷창에 입력하는 주소)
+
+인터넷 창 주소 뒤에 /hello 입력하면 Served at: /jsp_sevlet1 나옴
+-----
+doGet에서 response 지우고 println("Hello World") 하고 run as
+-> 이클립스 서버에 Hello World 뜸
+(인터넷창에는 안뜸)
+
+
+http://localhost:8282/jsp_sevlet1/hello
+
+localhost:8282 : 톰캣
+jsp_sevlet1 : 프로젝트명
+
+->톰캣이 프로젝트를 찾아가서 주소를 관리함
+
+@WebServlet("/hello")
+hello를 치면 HelloWorld클래스를 실행 시켜라
+
+
+
+public class HelloWorld2 extends HttpServlet
+servlet은 HttpServlet에서 나옴
+
+doGet
+doPost
+둘 중에 한개에 대해서 실행됨
+
+
+localhost : 127.0.0.1
+
+http://localholst:8181/helloworld/servlet/com.javalec.ex.HelloWorld
+helloworld = 프로젝트명 = 컨텍스트명
+
+
+
+<servlet-name>helloworld</servlet-name>
+<servlet-class>edu.kosmo.ex.HellowWorld</servlet-class>
+
+==>HelloWorld helloworld = new edu.kosmo.ex.Helloworld();
+
+
+HttpServlet = http 프로토콜을 최종사용자가 잘 몰라도 사용할 수 있도록
+캡슐화한 클래스(객체)
+
+====================
+
+<부트스트랩>
+
+h1, h2~~는 bold설정
+display-1,-2~~~는 글씨는 크지만 bold설정X
+
+<h1>Table Test <small>secondary text</small></h1>
+small : h1의 절반(부모의 절반) bold설정도 없어짐
+
+text-capitalize : 앞 글자 대문자
+The Quick Brown For Jumps Over The Lazy Dog
+
+list-inline : 3버전대에서만 가능, 4버전 X
+4버전부터는 group화 해서
+list-group
+
+
+
