@@ -1,0 +1,31 @@
+Encoding 값 : ETF-8로 맞추기
+
+글자 깨질때 : (POST type일때)
+request.setCharacterEncoding(UTF-8);
+
+=======
+JSP
+=hmtl(웹페이지) + java 문법을 집어넣기 위해서 좀 더 문법을 추가함
+(동적으로 만들기 위해서)
+
+------
+
+tomcat - catalina - 프로젝트명 들어가면 jsp 파일이 java로 바뀜
+
+jsp -> servlet 파일로 변환된 다음 java로 바뀜
+
+
+------------
+
+<BootStrap>
+
+container-fluid : 간격없이 다 채움
+padding은 p로 주는데 1~5까지 가능 (p-1, p-2...)
+pt : top
+pb : bottom
+p-3 기준 : 16px
+margin : my : 전체
+mt : top
+
+
+
