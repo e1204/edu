@@ -1,0 +1,126 @@
+jsp는 servlet으로 바뀜
+catalina 들어가면 star_jsp.java파일 있음
+<%
+	for(int i = 1; i <= 5; i++){
+		for(int j = 0; j < i; j++){
+%>
+			<%="*"%>
+<% 
+		}
+		out.println("<br>");
+	}
+%>
+
+-->
+
+for(int i = 1; i <= 5; i++){
+		for(int j = 0; j < i; j++){
+
+      out.write("\r\n");
+      out.write("			");
+      out.print("*");
+      out.write('\r');
+      out.write('\n');
+ 
+		}
+		out.println("<br>");
+	}
+
+====================
+out.write("\r\n");
+%>
+			<%="*"%>
+<% 
+1번째 %>끝나고 한 줄 엔터 누른거 표시
+
+			<%="*"%>
+out.write("			");  공간
+
+\r , \n이 생김
+-->
+<%
+	for(int i = 1; i <= 5; i++){for(int j = 0; j < i; j++){%><%="*"%><% 
+		}
+		out.println("<br>");
+	}
+%>
+<<<한 줄로 붙여서 쓰면 해결>>>
+
+========================================
+
+method 없으면 get (디폴트값 get)
+
+========================================
+
+웹 프로그래밍 : 통신
+개념 : 
+http 프로토콜 :
+-URL 의미
+-post와 get 차이
+-Rediret와 Forward 차이@@@(중요함!!)@@@
+-쿠키와 세션의 개념
+
+========================================
+
+pass.jsp -> 클라이언트로 하여금 다시 오게 함
+pass.jsp 치고 들어오세요,,
+
+========================================
+
+jsp 앞에 붙음 : 액션태그
+(forward.jsp)
+
+<jsp:forward page="sub.jsp"></jsp:forward>
+하면 sub.jsp에 있는 내용이 나옴
+
+response.sendRedirect("sub.jsp");
+을 입력해도 sub.jsp에 있는 내용이 나오지만
+
+forward와 response의 주소창이 다름
+forward : main.jsp
+response : sub.jsp
+
+=========================================
+
+redirect vs forward 차이 @@@(중요함!!)@@@
+https://doublesprogramming.tistory.com/63
+
+=========================================
+
+flush : 비우다
+디폴트로 false
+true로 하면 포함할 페이지의 내용을 삽입하기 이전에 현재 페이지가 지금까지
+버퍼에 저장한 내용을 출력
+헤더 정보가 웹 브라우저에 전송이 되고 나면 헤더 정보를 추가해도 결과가 반영되지 않음
+
+=========================================
+
+쿠키 : 관계를 끊음
+채팅처럼 session 유지 안됨
+연결성 유지를 위한 꼼수,,
+한 번 집어넣은 쿠키에 대해서 똑같은 서버에 넣었을때 그 쿠키를 같이 전달
+
+=========
+
+<BootStrap>
+
+(Pricing)
+-nav bar-
+text-align : bottom
+mr-auto -> ml-auto
+mr은 margin right : 왼쪽 정렬(margin을 오른쪽으로 줌)
+ml은 margin left : 오른쪽 정렬
+-pricing text-
+중앙 정렬 : text-center
+글씨 빠져나옴 : container
+mt-4 bar와 pricing 글자 간격
+-free-pro-enterprise-
+class=row 해야 세개가 한 줄에 나옴
+(안하면 한 줄씩 세개)
+card-deck : 수평으로 된 카드 열을 생성(카드에서만 적용가능)
+
+
+
+
+
+
